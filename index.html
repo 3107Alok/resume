@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alok Singh - Resume</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,700;0,900;1,300&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* COLOR PALETTE */
+            --navy: #0f172a;        /* Deep Navy for Headings */
+            --blue: #2563eb;        /* Bright Blue for Links/Accents */
+            --sidebar-bg: #f8fafc;  /* Soft Gray Sidebar */
+            --text: #334155;        /* Body Text (Slate Gray) */
+            --text-light: #64748b;  /* Muted Text */
+            --white: #ffffff;
+            --border: #e2e8f0;      /* Light border color */
+            --hover-bg: #f8fafc;    /* Very subtle hover color */
+            
+            /* BUBBLE COLORS */
+            --bubble-light-bg: #e0f2fe; /* Very pale blue background */
+            --bubble-dark-text: #0284c7; /* Darker blue text */
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #525252;
+            font-family: 'Open Sans', sans-serif;
+            color: var(--text);
+            font-size: 14px;
+            line-height: 1.6;
+            print-color-adjust: exact;
+            -webkit-print-color-adjust: exact;
+        }
+
+        /* Page Layout */
+        .resume-container {
+            width: 210mm;
+            min-height: 297mm;
+            background-color: var(--white);
+            margin: 40px auto;
+            display: grid;
+            grid-template-columns: 34% 66%; /* Sidebar 34% */
+            box-shadow: 0 0 25px rgba(0,0,0,0.4);
+        }
+
+        /* --- SIDEBAR --- */
+        .sidebar {
+            background-color: var(--sidebar-bg);
+            padding: 40px 25px;
+            border-right: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            gap: 35px;
+        }
+
+        /* Sidebar Headings */
+        .sidebar-title {
+            font-family: 'Merriweather', serif;
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--navy);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 2px solid var(--blue);
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+
+        /* Contact */
+        .contact-row {
+            margin-bottom: 12px;
+            font-size: 12.5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .contact-row a { text-decoration: none; color: var(--text); }
+        .contact-row a:hover { color: var(--blue); }
+        
+        .icon {
+            width: 16px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        /* Education */
+        .edu-item { margin-bottom: 20px; }
+        .edu-degree { font-weight: 700; color: var(--blue); font-size: 14px; }
+        .edu-inst { font-size: 13px; font-weight: 600; margin-bottom: 2px; }
+        .edu-meta { font-size: 12.5px; color: var(--text-light); font-style: italic; }
+
+        /* Skills - BUBBLE STYLING */
+        .skill-cat {
+            font-family: 'Merriweather', serif;
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--text-light);
+            margin-bottom: 8px;
+            display: block;
+        }
+        
+        .skill-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 20px;
+        }
+
+        .skill-bubble {
+            font-size: 11.5px;
+            font-weight: 600;
+            color: var(--bubble-dark-text); 
+            background-color: var(--bubble-light-bg);
+            padding: 4px 10px;
+            border-radius: 12px;
+            white-space: nowrap;
+        }
+
+        /* Interests (Reused for Main Content) */
+        .interest-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13.5px;
+            color: var(--text);
+        }
+        .dot {
+            height: 6px;
+            width: 6px;
+            background-color: var(--blue);
+            border-radius: 50%;
+        }
+
+        /* --- MAIN CONTENT --- */
+        .main { padding: 45px 40px; }
+
+        /* Name Header */
+        header { margin-bottom: 35px; }
+        
+        h1 {
+            font-family: 'Merriweather', serif;
+            font-size: 38px;
+            font-weight: 900;
+            color: var(--navy);
+            margin-bottom: 5px;
+            line-height: 1;
+        }
+        
+        .role {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--blue);
+            font-weight: 600;
+        }
+
+        /* --- SPECIAL FOCUS HEADINGS --- */
+        .special-heading {
+            margin-top: 25px;
+            margin-bottom: 15px;
+            
+        }
+
+        .special-heading h2 {
+            font-family: 'Merriweather', serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--navy);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin: 0 0 8px 0;
+        }
+
+        .special-heading hr {
+            border: 0;
+            height: 2px;
+            background: linear-gradient(to right, var(--blue), var(--border));
+            margin: 0;
+            width: 100%;
+        }
+
+        p { margin-bottom: 10px; color: var(--text); }
+
+        /* --- NEW COMPACT PROJECT GRID CSS --- */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Creates 2 columns */
+            column-gap: 20px;
+            row-gap: 15px; /* Tighter spacing */
+        }
+
+        .project-mini {
+            display: flex;
+            flex-direction: column;
+            border-left: 2px solid var(--blue); /* Accent border */
+            padding-left: 10px;
+        }
+
+        .mini-header { margin-bottom: 2px; }
+
+        .mini-title {
+            font-family: 'Merriweather', serif;
+            font-size: 13.5px;
+            font-weight: 700;
+            color: var(--navy);
+            display: inline-block;
+        }
+
+        .mini-tech {
+            font-size: 10.5px;
+            font-weight: 600;
+            color: var(--text-light);
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 3px;
+        }
+
+        .mini-desc {
+            font-size: 12.5px;
+            color: var(--text);
+            line-height: 1.35;
+            margin-bottom: 4px;
+            flex-grow: 1; /* Pushes link to bottom */
+        }
+
+        .mini-link {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--blue);
+            text-decoration: none;
+        }
+        .mini-link:hover { text-decoration: underline; }
+
+        /* --- MAIN PAGE INTERESTS GRID --- */
+        .interests-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px 30px; /* Spacing between interest items */
+        }
+
+        @media print {
+            body { background: none; }
+            .resume-container { width: 100%; box-shadow: none; margin: 0; }
+            .special-heading hr { background: #ccc; }
+            .skill-bubble { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+        }
+
+        @media screen and (max-width: 768px) {
+            .resume-container { grid-template-columns: 1fr; width: 100%; height: auto; }
+            .sidebar { border-right: none; border-bottom: 1px solid var(--border); }
+            .projects-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="resume-container">
+        
+        <aside class="sidebar">
+            
+            <div>
+                <div class="sidebar-title">Contact</div>
+                <div class="contact-row"><span class="icon">📞</span> 8941807779</div>
+                <div class="contact-row"><span class="icon">📧</span> <a href="mailto:3107aloksingh@gmail.com">3107aloksingh@gmail.com</a></div>
+                <div class="contact-row"><span class="icon">📍</span> Ghaziabad, India</div>
+                <div class="contact-row"><span class="icon">🔗</span> <a href="https://www.linkedin.com/in/alok-singh-86688a315/" target="_blank">linkedin.com/in/alok-singh</a></div>
+                <div class="contact-row"><span class="icon">🐙</span> <a href="https://github.com/3107Alok" target="_blank">github.com/3107Alok</a></div>
+            </div>
+
+            <div>
+                <div class="sidebar-title">Education</div>
+                <div class="edu-item">
+                    <div class="edu-degree">B.Tech Computer Science</div>
+                    <div class="edu-inst">KIET Group of Institutions</div>
+                    <div class="edu-meta">2024 – Present | 4th Sem</div>
+                </div>
+                <div class="edu-item">
+                    <div class="edu-degree">Secondary (Class 12)</div>
+                    <div class="edu-inst">John Milton Public School (CBSE)</div>
+                    <div class="edu-meta">Score: 75%</div>
+                </div>
+                <div class="edu-item">
+                    <div class="edu-degree">Primary (Class 10)</div>
+                    <div class="edu-inst">Police Modern School (CBSE)</div>
+                    <div class="edu-meta">Score: 85%</div>
+                </div>
+            </div>
+
+            <div>
+                <div class="sidebar-title">Tech Skills</div>
+
+                <span class="skill-cat">Languages</span>
+                <div class="skill-container">
+                    <span class="skill-bubble">C++</span>
+                    <span class="skill-bubble">Python</span>
+                    <span class="skill-bubble">Java</span>
+                </div>
+
+                <span class="skill-cat">CS Fundamentals</span>
+                <div class="skill-container">
+                    <span class="skill-bubble">DS & Algorithms</span>
+                    <span class="skill-bubble">Web Dev</span>
+                    <span class="skill-bubble">OOP</span>
+
+                </div>
+                
+                
+                <span class="skill-cat">Tools & Version Control</span>
+                <div class="skill-container">
+                    <span class="skill-bubble">Git</span>
+                    <span class="skill-bubble">GitHub</span>
+                    <span class="skill-bubble">VS Code</span>
+                    <span class="skill-bubble">Linux</span>
+                </div>
+
+                <span class="skill-cat">Other skills</span>
+                <div class="skill-container">
+                    <span class="skill-bubble">Management</span>
+                </div>
+            </div>
+
+        </aside>
+
+        <main class="main">
+            
+            <header>
+                <h1>Alok Singh</h1>
+                <div class="role">Software Developer</div>
+            </header>
+
+            <section>
+                <div class="special-heading">
+                    <h2>Professional Profile</h2>
+                    <hr>
+                </div>
+                <p>
+                    Aspiring Computer Science student with strong foundation in Java, C++, Data Structures, and web development. Skilled in building responsive web applications and solving problems using efficient algorithms. Passionate about software development and continuously learning modern technologies. Seeking opportunities to contribute and grow as a software developer.
+ </p>
+            </section>
+
+            <section>
+                <div class="special-heading">
+                    <h2>Key Projects</h2>
+                    <hr>
+                </div>
+
+                <div class="projects-grid">
+
+                    <div class="project-mini">
+                        <div class="mini-header">
+                            <span class="mini-title">Plant Health AI (SIH)</span>
+                        </div>
+                        <span class="mini-tech">Python • OpenCV • Custom Math</span>
+                        <div class="mini-desc">
+                            Identifies leaf damage using custom tensor mesh algorithms and CV to calc real-time health metrics.
+                        </div>
+                        <a href="https://github.com/Aditsharma12/SIH-project" class="mini-link" target="_blank">Live Demo &rarr;</a>
+                    </div>
+
+                    <div class="project-mini">
+                        <div class="mini-header">
+                            <span class="mini-title">AsTravels</span>
+                        </div>
+                        <span class="mini-tech">HTML • CSS • JavaScript</span>
+                        <div class="mini-desc">
+   Responsive multi-page travel website built using HTML, CSS, and JavaScript featuring interactive navigation, structured layout, and user-friendly interface.
+
+</div>
+                        <a href="https://3107alok.github.io/ASTravels/" class="mini-link" target="_blank">Source Code &rarr;</a>
+                    </div>
+
+
+            <section>
+                <div class="special-heading">
+                    <h2>Academic Focus</h2>
+                    <hr>
+                </div>
+                <p>
+                    <strong>Core CS:</strong> Data Structures & Algorithms, Operating Systems, DBMS, Object-Oriented Programming (Java).
+                </p>
+                <p>
+                    <strong>Mathematics:</strong> Probability & Statistics, Linear Algebra (Matrices), Calculus.
+                </p>
+                
+            </section>
+
+            <section>
+                <div class="special-heading">
+                    <h2>Interests</h2>
+                    <hr>
+                </div>
+                <div class="interests-grid">
+                    <div class="interest-item"><div class="dot"></div> Building AI Agents</div>
+                    <div class="interest-item"><div class="dot"></div> Video Editing</div>
+                    <div class="interest-item"><div class="dot"></div> Travelling</div>
+                    <div class="interest-item"><div class="dot"></div> Listening to Music</div>
+                </div>
+            </section>
+
+            <section>
+                <div class="special-heading">
+                    <h2>Certifications</h2>
+                    <hr>
+                </div>
+                <p>
+                    <strong>Red Hat Academy:</strong> Linux Fundamentals
+                </p>
+                <p>
+                    <strong>Infosys:</strong> Java OOPs Concepts
+                </p>
+                <p>
+                    <strong>Infosys:</strong> Intro to NoSQL Databases
+                </p>
+                <p>
+                    <strong>AWS:</strong> Cloud Practitioner Foundations
+                </p>
+                
+            </section>
+        </main>
+    </div>
+
+</body>
+</html>
