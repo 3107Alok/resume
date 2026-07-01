@@ -16,7 +16,7 @@
             --white: #ffffff;
             --border: #e2e8f0;      /* Light border color */
             --hover-bg: #f8fafc;    /* Very subtle hover color */
-            
+
             /* BUBBLE COLORS */
             --bubble-light-bg: #e0f2fe; /* Very pale blue background */
             --bubble-dark-text: #0284c7; /* Darker blue text */
@@ -56,7 +56,7 @@
             border-right: 1px solid var(--border);
             display: flex;
             flex-direction: column;
-            gap: 35px;
+            gap: 30px;
         }
 
         /* Sidebar Headings */
@@ -86,7 +86,7 @@
         }
         .contact-row a { text-decoration: none; color: var(--text); }
         .contact-row a:hover { color: var(--blue); }
-        
+
         .icon {
             width: 16px;
             text-align: center;
@@ -94,10 +94,10 @@
         }
 
         /* Education */
-        .edu-item { margin-bottom: 20px; }
-        .edu-degree { font-weight: 700; color: var(--blue); font-size: 14px; }
-        .edu-inst { font-size: 13px; font-weight: 600; margin-bottom: 2px; }
-        .edu-meta { font-size: 12.5px; color: var(--text-light); font-style: italic; }
+        .edu-item { margin-bottom: 18px; }
+        .edu-degree { font-weight: 700; color: var(--blue); font-size: 13.5px; }
+        .edu-inst { font-size: 12.5px; font-weight: 600; margin-bottom: 2px; }
+        .edu-meta { font-size: 12px; color: var(--text-light); font-style: italic; }
 
         /* Skills - BUBBLE STYLING */
         .skill-cat {
@@ -108,25 +108,25 @@
             margin-bottom: 8px;
             display: block;
         }
-        
+
         .skill-container {
             display: flex;
             flex-wrap: wrap;
             gap: 6px;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
         }
 
         .skill-bubble {
-            font-size: 11.5px;
+            font-size: 11px;
             font-weight: 600;
-            color: var(--bubble-dark-text); 
+            color: var(--bubble-dark-text);
             background-color: var(--bubble-light-bg);
             padding: 4px 10px;
             border-radius: 12px;
             white-space: nowrap;
         }
 
-        /* Interests (Reused for Main Content) */
+        /* Interests */
         .interest-item {
             display: flex;
             align-items: center;
@@ -139,14 +139,15 @@
             width: 6px;
             background-color: var(--blue);
             border-radius: 50%;
+            flex-shrink: 0;
         }
 
         /* --- MAIN CONTENT --- */
-        .main { padding: 45px 40px; }
+        .main { padding: 40px 40px; }
 
         /* Name Header */
-        header { margin-bottom: 35px; }
-        
+        header { margin-bottom: 30px; }
+
         h1 {
             font-family: 'Merriweather', serif;
             font-size: 38px;
@@ -155,7 +156,7 @@
             margin-bottom: 5px;
             line-height: 1;
         }
-        
+
         .role {
             font-family: 'Open Sans', sans-serif;
             font-size: 16px;
@@ -167,14 +168,13 @@
 
         /* --- SPECIAL FOCUS HEADINGS --- */
         .special-heading {
-            margin-top: 25px;
-            margin-bottom: 15px;
-            
+            margin-top: 22px;
+            margin-bottom: 14px;
         }
 
         .special-heading h2 {
             font-family: 'Merriweather', serif;
-            font-size: 18px;
+            font-size: 17px;
             font-weight: 700;
             color: var(--navy);
             text-transform: uppercase;
@@ -190,63 +190,86 @@
             width: 100%;
         }
 
-        p { margin-bottom: 10px; color: var(--text); }
+        p { margin-bottom: 8px; color: var(--text); }
 
-        /* --- NEW COMPACT PROJECT GRID CSS --- */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr; /* Creates 2 columns */
-            column-gap: 20px;
-            row-gap: 15px; /* Tighter spacing */
+        /* --- PROJECT LIST --- */
+        .project-item {
+            border-left: 2px solid var(--blue);
+            padding-left: 14px;
+            margin-bottom: 16px;
         }
 
-        .project-mini {
+        .project-header {
             display: flex;
-            flex-direction: column;
-            border-left: 2px solid var(--blue); /* Accent border */
-            padding-left: 10px;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 4px;
+            margin-bottom: 2px;
         }
 
-        .mini-header { margin-bottom: 2px; }
-
-        .mini-title {
+        .project-title {
             font-family: 'Merriweather', serif;
-            font-size: 13.5px;
+            font-size: 14.5px;
             font-weight: 700;
             color: var(--navy);
-            display: inline-block;
         }
 
-        .mini-tech {
-            font-size: 10.5px;
-            font-weight: 600;
+        .project-date {
+            font-size: 11.5px;
             color: var(--text-light);
+            font-style: italic;
+            white-space: nowrap;
+        }
+
+        .project-tech {
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--blue);
             text-transform: uppercase;
             display: block;
+            margin-bottom: 5px;
+            letter-spacing: 0.3px;
+        }
+
+        .project-item ul {
+            margin: 0;
+            padding-left: 16px;
+        }
+
+        .project-item li {
+            font-size: 12.5px;
+            color: var(--text);
+            line-height: 1.45;
             margin-bottom: 3px;
         }
 
-        .mini-desc {
-            font-size: 12.5px;
+        /* --- EXPERIENCE --- */
+        .exp-item {
+            border-left: 2px solid var(--blue);
+            padding-left: 14px;
+            margin-bottom: 14px;
+        }
+
+        /* --- CERTIFICATIONS LIST --- */
+        .cert-list {
+            list-style: none;
+            padding: 0;
+        }
+        .cert-list li {
+            font-size: 13px;
             color: var(--text);
-            line-height: 1.35;
-            margin-bottom: 4px;
-            flex-grow: 1; /* Pushes link to bottom */
-        }
-
-        .mini-link {
-            font-size: 11px;
-            font-weight: 700;
-            color: var(--blue);
-            text-decoration: none;
-        }
-        .mini-link:hover { text-decoration: underline; }
-
-        /* --- MAIN PAGE INTERESTS GRID --- */
-        .interests-grid {
+            margin-bottom: 6px;
             display: flex;
+            justify-content: space-between;
+            gap: 10px;
             flex-wrap: wrap;
-            gap: 15px 30px; /* Spacing between interest items */
+        }
+        .cert-list li .cert-date {
+            color: var(--text-light);
+            font-size: 11.5px;
+            font-style: italic;
+            white-space: nowrap;
         }
 
         @media print {
@@ -259,21 +282,20 @@
         @media screen and (max-width: 768px) {
             .resume-container { grid-template-columns: 1fr; width: 100%; height: auto; }
             .sidebar { border-right: none; border-bottom: 1px solid var(--border); }
-            .projects-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
     <div class="resume-container">
-        
+
         <aside class="sidebar">
-            
+
             <div>
                 <div class="sidebar-title">Contact</div>
-                <div class="contact-row"><span class="icon">📞</span> 8941807779</div>
+                <div class="contact-row"><span class="icon">📞</span> +91-8941807779</div>
                 <div class="contact-row"><span class="icon">📧</span> <a href="mailto:3107aloksingh@gmail.com">3107aloksingh@gmail.com</a></div>
-                <div class="contact-row"><span class="icon">📍</span> Ghaziabad, India</div>
+                <div class="contact-row"><span class="icon">📍</span> Agra, Uttar Pradesh, India</div>
                 <div class="contact-row"><span class="icon">🔗</span> <a href="https://www.linkedin.com/in/alok-singh-86688a315/" target="_blank">linkedin.com/in/alok-singh</a></div>
                 <div class="contact-row"><span class="icon">🐙</span> <a href="https://github.com/3107Alok" target="_blank">github.com/3107Alok</a></div>
             </div>
@@ -282,18 +304,18 @@
                 <div class="sidebar-title">Education</div>
                 <div class="edu-item">
                     <div class="edu-degree">B.Tech Computer Science</div>
-                    <div class="edu-inst">KIET Group of Institutions</div>
-                    <div class="edu-meta">2024 – Present | 4th Sem</div>
+                    <div class="edu-inst">Krishna Institute of Engineering and Technology (KIET), Ghaziabad</div>
+                    <div class="edu-meta">Aug 2024 – Aug 2028</div>
                 </div>
                 <div class="edu-item">
-                    <div class="edu-degree">Secondary (Class 12)</div>
-                    <div class="edu-inst">John Milton Public School (CBSE)</div>
-                    <div class="edu-meta">Score: 75%</div>
+                    <div class="edu-degree">Class XII – CBSE</div>
+                    <div class="edu-inst">John Milton Public School, Agra</div>
+                    <div class="edu-meta">Passed 2024</div>
                 </div>
                 <div class="edu-item">
-                    <div class="edu-degree">Primary (Class 10)</div>
-                    <div class="edu-inst">Police Modern School (CBSE)</div>
-                    <div class="edu-meta">Score: 85%</div>
+                    <div class="edu-degree">Class X – CBSE</div>
+                    <div class="edu-inst">Police Modern Secondary School, Agra</div>
+                    <div class="edu-meta">Passed 2022</div>
                 </div>
             </div>
 
@@ -302,41 +324,59 @@
 
                 <span class="skill-cat">Languages</span>
                 <div class="skill-container">
-                    <span class="skill-bubble">C++</span>
-                    <span class="skill-bubble">Python</span>
                     <span class="skill-bubble">Java</span>
+                    <span class="skill-bubble">Python</span>
+                    <span class="skill-bubble">C/C++</span>
+                    <span class="skill-bubble">JavaScript</span>
                 </div>
 
-                <span class="skill-cat">CS Fundamentals</span>
+                <span class="skill-cat">Frameworks & Libraries</span>
                 <div class="skill-container">
-                    <span class="skill-bubble">DS & Algorithms</span>
-                    <span class="skill-bubble">Web Dev</span>
-                    <span class="skill-bubble">OOP</span>
-
+                    <span class="skill-bubble">Flutter</span>
+                    <span class="skill-bubble">React</span>
+                    <span class="skill-bubble">Node.js</span>
+                    <span class="skill-bubble">TensorFlow Lite</span>
                 </div>
-                
-                
-                <span class="skill-cat">Tools & Version Control</span>
+
+                <span class="skill-cat">Cloud & Backend</span>
+                <div class="skill-container">
+                    <span class="skill-bubble">AWS</span>
+                    <span class="skill-bubble">Google Firebase</span>
+                    <span class="skill-bubble">MongoDB</span>
+                </div>
+
+                <span class="skill-cat">Databases</span>
+                <div class="skill-container">
+                    <span class="skill-bubble">MongoDB</span>
+                    <span class="skill-bubble">Amazon DynamoDB</span>
+                    <span class="skill-bubble">Firebase Firestore</span>
+                </div>
+
+                <span class="skill-cat">Tools & Platforms</span>
                 <div class="skill-container">
                     <span class="skill-bubble">Git</span>
                     <span class="skill-bubble">GitHub</span>
                     <span class="skill-bubble">VS Code</span>
-                    <span class="skill-bubble">Linux</span>
+                    <span class="skill-bubble">Power BI</span>
+                    <span class="skill-bubble">Tableau</span>
                 </div>
 
-                <span class="skill-cat">Other skills</span>
+                <span class="skill-cat">Core Concepts</span>
                 <div class="skill-container">
-                    <span class="skill-bubble">Management</span>
+                    <span class="skill-bubble">DSA</span>
+                    <span class="skill-bubble">REST API Design</span>
+                    <span class="skill-bubble">Serverless Architecture</span>
+                    <span class="skill-bubble">Machine Learning</span>
                 </div>
             </div>
 
         </aside>
 
         <main class="main">
-            
+
             <header>
                 <h1>Alok Singh</h1>
-                <div class="role">Software Developer</div>
+                <div class="role">Mobile App Developer</div>
             </header>
 
             <section>
@@ -345,87 +385,84 @@
                     <hr>
                 </div>
                 <p>
-                    Aspiring Computer Science student with strong foundation in Java, C++, Data Structures, and web development. Skilled in building responsive web applications and solving problems using efficient algorithms. Passionate about software development and continuously learning modern technologies. Seeking opportunities to contribute and grow as a software developer.
- </p>
+                    Computer Science undergraduate specializing in mobile application development with Flutter, backed by strong foundations in Java, C++, and full-stack cloud technologies. Experienced in building AI-integrated, serverless, and real-time mobile applications using Firebase, AWS, and on-device machine learning. Passionate about crafting scalable, user-focused mobile experiences.
+                </p>
             </section>
 
             <section>
                 <div class="special-heading">
-                    <h2>Key Projects</h2>
+                    <h2>Projects</h2>
                     <hr>
                 </div>
 
-                <div class="projects-grid">
-
-                    <div class="project-mini">
-                        <div class="mini-header">
-                            <span class="mini-title">Plant Health AI (SIH)</span>
-                        </div>
-                        <span class="mini-tech">Python • OpenCV • Custom Math</span>
-                        <div class="mini-desc">
-                            Identifies leaf damage using custom tensor mesh algorithms and CV to calc real-time health metrics.
-                        </div>
-                        <a href="https://github.com/Aditsharma12/SIH-project" class="mini-link" target="_blank">Live Demo &rarr;</a>
+                <div class="project-item">
+                    <div class="project-header">
+                        <span class="project-title">MedVerse – AI Healthcare Platform</span>
+                        <span class="project-date">Jun 2026</span>
                     </div>
+                    <span class="project-tech">Flutter • Firebase • Flask • MongoDB • AI</span>
+                    <ul>
+                        <li>Developed an AI-powered healthcare mobile application with Patient, Doctor, Lab, and Admin modules using Flutter.</li>
+                        <li>Integrated an AI medical chatbot, AI prescription and report analyzer, appointment booking, medical record management, and medical document upload features.</li>
+                        <li>Implemented Firebase Authentication, Firestore, and Flask REST APIs for secure healthcare workflows.</li>
+                        <li>Designed a scalable backend using MongoDB GridFS for secure storage and retrieval of medical documents.</li>
+                    </ul>
+                </div>
 
-                    <div class="project-mini">
-                        <div class="mini-header">
-                            <span class="mini-title">AsTravels</span>
-                        </div>
-                        <span class="mini-tech">HTML • CSS • JavaScript</span>
-                        <div class="mini-desc">
-   Responsive multi-page travel website built using HTML, CSS, and JavaScript featuring interactive navigation, structured layout, and user-friendly interface.
-
-</div>
-                        <a href="https://3107alok.github.io/ASTravels/" class="mini-link" target="_blank">Source Code &rarr;</a>
+                <div class="project-item">
+                    <div class="project-header">
+                        <span class="project-title">Smart Attendance</span>
+                        <span class="project-date">Apr 2026</span>
                     </div>
-
-
-            <section>
-                <div class="special-heading">
-                    <h2>Academic Focus</h2>
-                    <hr>
+                    <span class="project-tech">Flutter • TensorFlow Lite • Firebase • Google ML Kit</span>
+                    <ul>
+                        <li>Built a smart attendance application in Flutter featuring on-device facial recognition for real-time identity verification.</li>
+                        <li>Integrated TensorFlow Lite (FaceNet) and Google ML Kit for real-time face detection and embedding-based face matching.</li>
+                        <li>Stored student records and attendance logs in Firebase Firestore, enabling efficient data retrieval and real-time synchronization.</li>
+                    </ul>
                 </div>
-                <p>
-                    <strong>Core CS:</strong> Data Structures & Algorithms, Operating Systems, DBMS, Object-Oriented Programming (Java).
-                </p>
-                <p>
-                    <strong>Mathematics:</strong> Probability & Statistics, Linear Algebra (Matrices), Calculus.
-                </p>
-                
-            </section>
 
-            <section>
-                <div class="special-heading">
-                    <h2>Interests</h2>
-                    <hr>
-                </div>
-                <div class="interests-grid">
-                    <div class="interest-item"><div class="dot"></div> Building AI Agents</div>
-                    <div class="interest-item"><div class="dot"></div> Video Editing</div>
-                    <div class="interest-item"><div class="dot"></div> Travelling</div>
-                    <div class="interest-item"><div class="dot"></div> Listening to Music</div>
+                <div class="project-item">
+                    <div class="project-header">
+                        <span class="project-title">Edunex – Serverless Learning Platform</span>
+                        <span class="project-date">Mar 2026 – Apr 2026</span>
+                    </div>
+                    <span class="project-tech">AWS Lambda • API Gateway • DynamoDB • S3</span>
+                    <ul>
+                        <li>Engineered a serverless notes and past-year questions (PYQ) platform on AWS, eliminating infrastructure management overhead.</li>
+                        <li>Designed RESTful APIs using AWS API Gateway and Lambda functions; used Amazon DynamoDB for structured data and Amazon S3 for file storage.</li>
+                        <li>Built an admin dashboard for content tracking, file upload management, and user analytics.</li>
+                    </ul>
                 </div>
             </section>
 
             <section>
                 <div class="special-heading">
-                    <h2>Certifications</h2>
+                    <h2>Experience</h2>
                     <hr>
                 </div>
-                <p>
-                    <strong>Red Hat Academy:</strong> Linux Fundamentals
-                </p>
-                <p>
-                    <strong>Infosys:</strong> Java OOPs Concepts
-                </p>
-                <p>
-                    <strong>Infosys:</strong> Intro to NoSQL Databases
-                </p>
-                <p>
-                    <strong>AWS:</strong> Cloud Practitioner Foundations
-                </p>
-                
+                <div class="exp-item">
+                    <div class="project-header">
+                        <span class="project-title">Student Placement Coordinator, CRPC – KIET</span>
+                        <span class="project-date">May 2026 – Present</span>
+                    </div>
+                    <ul>
+                        <li>Coordinated placement activities and student outreach for 70+ students, assisting in recruitment drives and interview scheduling.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <div class="special-heading">
+                    <h2>Certifications & Achievements</h2>
+                    <hr>
+                </div>
+                <ul class="cert-list">
+                    <li><span>AWS Cloud Practitioner</span> <span class="cert-date">Feb 2026</span></li>
+                    <li><span>AWS AI Practitioner</span> <span class="cert-date">Jun 2026</span></li>
+                    <li><span>MEPro Level 7 English Proficiency</span> <span class="cert-date">Dec 2024</span></li>
+                    <li><span>Solved 80+ DSA problems on LeetCode</span> <span class="cert-date"></span></li>
+                </ul>
             </section>
         </main>
     </div>
